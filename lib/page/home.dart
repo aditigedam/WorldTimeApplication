@@ -15,13 +15,11 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     data = data.isNotEmpty?data:(ModalRoute.of(context)!.settings.arguments) as Map; //
     print(data);
-    String bgImage = data['isDayTime']?'day.png':'night.png';
+    String bgImage = data['isDayTime']?'day.jpg':'night.jpg';
     Color bgColor = data['isDayTime']?Colors.blue:Colors.indigo;
     return Scaffold(
         backgroundColor: bgColor,
       body:
-      SafeArea(
-        child:
       Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -33,14 +31,14 @@ class _HomeState extends State<Home> {
           padding: const EdgeInsets.all(20.0),
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(0,120,0,0),
+              padding: const EdgeInsets.fromLTRB(0,180,0,0),
               child: Column(
                 children: [
                   TextButton.icon(
                       onPressed: ()async{
                        dynamic result = await Navigator.pushNamed(context, '/location');
                        setState(() {
-                         data={
+                         data = {
                            'time' : result['time'],
                            'isDayTime' : result['isDayTime'],
                            'location': result['location'],
@@ -77,7 +75,6 @@ class _HomeState extends State<Home> {
             ),
           ),
         ),
-      ),
       ),
     );
   }

@@ -5,6 +5,7 @@ import 'package:world_time/page/loading.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     initialRoute:'/' ,
     routes: {
       '/':(context) => Loading(),
