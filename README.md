@@ -1,5 +1,4 @@
-# To-Do Application
-
+# WorldTimeApplication
 This is an flutter based project a world time app. Worked with the 'http' package to collect data from a 3rd party API.
 
 ## The application looks like this:
